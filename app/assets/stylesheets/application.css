@@ -94,11 +94,11 @@ body {
   display: block;
 }
 
-.post-actions-unlike {
+/* .post-actions-unlike {
   background: url('liked.png');
   background-size: contain;
   display: block;
-}
+} */
 
 .post-actions {
   display: flex;

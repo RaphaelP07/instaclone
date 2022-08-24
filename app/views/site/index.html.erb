@@ -1,8 +1,8 @@
 <h2>
-  Welcome <%= user_signed_in? ? current_user.email : '' %>
+  Welcome <%= user_signed_in? ? current_user.username : '' %>
 </h2>
 
 <div id="posts"></div>
 <% Post.all.sort.reverse.each do |post| %>
-  <div id="posts"></div>
+  <%= render partial: "posts/post", locals: { post: post } %>
 <% end %>
