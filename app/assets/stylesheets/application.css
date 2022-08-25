@@ -83,7 +83,7 @@ body {
   color: #222;
 }
 
-.post-actions-like, .post-actions-unlike {
+.post-actions-like, .post-actions-liked {
   width: 24px;
   height: 24px;
 }
@@ -95,7 +95,7 @@ body {
 }
 
 .post-actions-liked {
-  background: url('likes.png');
+  background: url('liked.png');
   background-size: contain;
   display: block;
 }
