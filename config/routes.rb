@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  get 'posts/new'
-  post 'posts/create', as: :posts
+  get 'likes/create'
+  resources :posts, only: [:create, :new] do
+    resources :likes, only: :create
+  end
   get 'site/index'
   devise_for :users
   root "site#index"
