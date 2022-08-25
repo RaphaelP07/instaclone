@@ -24,7 +24,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_25_032645) do
   create_table "likes", id: false, force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "post_id", null: false
-    t.index ["post_id"], name: "index_likes_on_post_id"
+    t.string "likeable_type", null: false
+    t.integer "likeable_id", null: false
+    t.index ["likeable_type", "likeable_id"], name: "index_likes_on_likeable"
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
