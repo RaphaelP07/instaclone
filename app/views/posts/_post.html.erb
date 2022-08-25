@@ -16,17 +16,16 @@
         <%= button_to "", post_likes_path(post), class: "post-actions-like" %>
       <% end %>
     <% end %>
-    <% puts post.likes.where(user_id: current_user.id).any? %>
-    <div class="post-actions-comments">4 comments</div>
+    <div class="post-actions-comments" id="post-comments-count">
+      <%= pluralize(post.comments.count, "comment") %>
+    </div>
   </div>
   <div class="post-comments">
-    <div class="comment">
-      <span class="comment-author">Joe</span>
-      This is comment
+    <div id="comment-form">
+      <%= render partial: "comments/form", locals: { post: post } %>
     </div>
-    <div class="comment">
-      <span class="comment-author">Doe</span>
-      This is comment 2
+    <div id="post-comments-list">
+      <%= render partial: 'comments/list', locals: { post: post } %>
     </div>
   </div>
 </div>
