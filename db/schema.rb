@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_25_032645) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_25_103227) do
   create_table "comments", force: :cascade do |t|
     t.text "body"
     t.integer "user_id", null: false
@@ -23,7 +23,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_25_032645) do
 
   create_table "likes", id: false, force: :cascade do |t|
     t.integer "user_id", null: false
-    t.integer "post_id", null: false
     t.string "likeable_type", null: false
     t.integer "likeable_id", null: false
     t.index ["likeable_type", "likeable_id"], name: "index_likes_on_likeable"
@@ -53,5 +52,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_25_032645) do
 
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
+  add_foreign_key "likes", "users"
   add_foreign_key "posts", "users"
 end

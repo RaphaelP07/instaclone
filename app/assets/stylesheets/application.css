@@ -88,16 +88,23 @@ body {
   height: 24px;
 }
 
-.post-actions-like {
+.post-actions-like,
+.comment-actions-like {
   background: url('like.png');
   background-size: contain;
   display: block;
 }
 
-.post-actions-liked {
+.post-actions-liked,
+.comment-actions-liked {
   background: url('liked.png');
   background-size: contain;
   display: block;
+}
+
+.comment-actions-like, .comment-actions-liked {
+  width: 14px;
+  height: 14px;
 }
 
 .post-actions {
@@ -119,11 +126,26 @@ body {
 
 .comment-author {
   font-weight: bold;
+  margin-right: 3px;
 }
 
 button {
   border: none;
   cursor: pointer;
+}
+
+.comment {
+  display: flex;
+}
+
+.comment-body {
+  margin-right: 3px;
+  width: min-content;
+}
+
+.comment-like-button {
+  display: grid;
+  place-content: center;
 }
 
 .comment-form {
